@@ -4,10 +4,10 @@ resource "aws_s3_bucket" "my_bucket" {
 
 }
 
-resource "aws_s3_bucket_object" "file_upload" {
+resource "aws_s3_bucket_object" "object" {
   bucket = "bbs1"
-  key    = "vars.tf"
-  source = "${path.module}/vars.tf"
-  etag   = "${filemd5("${path.module}/vars.tf")}"
+  key    = "instance.tf"
+  source = "${path.module}/instance.tf"
+  etag   = "${filemd5("${path.module}/instance.tf")}"
 }
 
